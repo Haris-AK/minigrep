@@ -12,8 +12,11 @@ fn main() {
         // Instead of exiting the program with a panic error, we use a nonzero error code which is
         // convention to signal that a process that called our program had the program exited with
         // an error state
-        process::exit(1) });
+        println!("{}", err);
+        process::exit(1)
+    });
     if let Err(e) = run(config) {
+        println!("{}", e);
         process::exit(1)
     }
 }
